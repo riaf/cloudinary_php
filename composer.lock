@@ -1,0 +1,47 @@
+{
+    "hash": "190f3576adc690eb106dc29d230535ef",
+    "packages": [
+
+    ],
+    "packages-dev": [
+        {
+            "package": "pear-pear.phpunit.de/File_Iterator",
+            "version": "1.3.1"
+        },
+        {
+            "package": "pear-pear.phpunit.de/PHPUnit",
+            "version": "3.6.12"
+        },
+        {
+            "package": "pear-pear.phpunit.de/PHPUnit_MockObject",
+            "version": "1.1.1"
+        },
+        {
+            "package": "pear-pear.phpunit.de/PHP_CodeCoverage",
+            "version": "1.1.3"
+        },
+        {
+            "package": "pear-pear.phpunit.de/PHP_Timer",
+            "version": "1.0.2"
+        },
+        {
+            "package": "pear-pear.phpunit.de/PHP_TokenStream",
+            "version": "1.1.3"
+        },
+        {
+            "package": "pear-pear.phpunit.de/Text_Template",
+            "version": "1.1.1"
+        },
+        {
+            "package": "pear-pear.symfony-project.com/YAML",
+            "version": "1.0.6"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}

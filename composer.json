@@ -1,0 +1,30 @@
+{
+  "name": "crocos/cloudinary",
+  "description": "cloudinary api",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Keisuke SATO",
+      "email": "sato@crocos.co.jp",
+      "homepage": "http://riaf.jp",
+      "role": "Developer"
+    }
+  ],
+  "version": "1.0.0",
+  "autoload": {
+    "psr-0": {"Cloudinary": "lib/"}
+  },
+  "require-dev": {
+    "pear-phpunit/phpunit": ">=3.6"
+  },
+  "repositories": [
+    {
+      "type": "pear",
+      "url":  "pear.phpunit.de"
+    },
+    {
+      "type": "pear",
+      "url":  "pear.symfony-project.com"
+    }
+  ]
+}

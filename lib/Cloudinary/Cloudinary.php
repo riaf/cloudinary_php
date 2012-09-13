@@ -12,6 +12,7 @@ namespace Cloudinary;
 /**
  * Cloudinary.
  *
+ * @codeCoverageIgnore
  * @author Keisuke SATO <sato@crocos.co.jp>
  */
 class Cloudinary

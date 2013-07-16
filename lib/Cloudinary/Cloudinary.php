@@ -20,10 +20,10 @@ class Cloudinary
     /**
      * @const VERSION
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     /**
      * @const SHARED_CDN
      */
-    const SHARED_CDN = "d3jpl91pxevbkh.cloudfront.net";
+    const SHARED_CDN = 'cloudinary-a.akamaihd.net';
 }

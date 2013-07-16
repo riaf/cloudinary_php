@@ -15,16 +15,7 @@
     "psr-0": {"Cloudinary": "lib/"}
   },
   "require-dev": {
-    "pear-phpunit/phpunit": ">=3.6"
-  },
-  "repositories": [
-    {
-      "type": "pear",
-      "url":  "pear.phpunit.de"
-    },
-    {
-      "type": "pear",
-      "url":  "pear.symfony-project.com"
-    }
-  ]
+    "phpunit/phpunit": "3.7.*",
+    "satooshi/php-coveralls": "dev-master"
+  }
 }

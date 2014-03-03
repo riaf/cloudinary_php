@@ -24,6 +24,11 @@ class Resource
     protected $cloudName;
 
     /**
+     * @var string $cname
+     */
+    protected $cname = 'res.cloudinary.com';
+
+    /**
      * @var string $apiKey
      */
     protected $apiKey;
@@ -67,6 +72,7 @@ class Resource
     public function getUrl($name, array $options = array())
     {
         $type = isset($options['type']) ? $options['type'] : 'upload';
+        $secure = isset($options['secure']) ? $options['secure'] : false;
 
         if (in_array($type, array('upload', 'asset')) && (stripos($name, 'http://') === 0 || stripos($name, 'https://') === 0)) {
             return $name;
@@ -75,19 +81,20 @@ class Resource
             unset($options['format']);
         }
 
-        $url = '';
-
-        if (isset($options['secure']) && $options['secure']) {
+        if ($secure) {
             $url = 'https://';
-
-            if (isset($options['secure_distribution'])) {
-                $url .= $options['secure_distribution'];
-            } else {
-                $url .= Cloudinary::SHARED_CDN;
-            }
         } else {
-            $url = 'http://res.cloudinary.com';
+            $url = 'http://';
         }
+
+        if ($secure && isset($options['secure_distribution'])) {
+            $url .= $options['secure_distribution'];
+        } elseif (isset($options['cname'])) {
+            $url .= $options['cname'];
+        } else {
+            $url .= $this->cname;
+        }
+
 
         $url = implode('/', $this->_removeEmptyValuesFromArray(array(
             $url,
@@ -102,6 +109,29 @@ class Resource
         )));
 
         return $url;
+    }
+
+    /**
+     * Set cname
+     *
+     * @param string $cname
+     * @return Resource
+     */
+    public function setCname($cname)
+    {
+        $this->cname = $cname;
+
+        return $this;
+    }
+
+    /**
+     * Get cname
+     *
+     * @return string
+     */
+    public function getCname()
+    {
+        return $this->cname;
     }
 
     /**
@@ -170,6 +200,7 @@ class Resource
                 'cloud_name',
                 'secure',
                 'secure_distribution',
+                'cname',
                 'private_cdn',
                 'format',
                 'transformation',
@@ -246,6 +277,8 @@ class Resource
      */
     protected function _isArray(array $array)
     {
+        $k = null;
+
         foreach ($array as $k => $v)
             break;
 

@@ -40,7 +40,7 @@ class CloudinaryResourceTest extends \PHPUnit_Framework_TestCase
 
         // secure
         $this->assertEquals(
-            'https://' . Cloudinary::SHARED_CDN . '/test123/image/upload/test',
+            'https://res.cloudinary.com/test123/image/upload/test',
             $this->cloudinary->getUrl('test', array(
                 'secure' => true,
             ))
@@ -54,6 +54,26 @@ class CloudinaryResourceTest extends \PHPUnit_Framework_TestCase
                 'secure_distribution' => 'example.com',
             ))
         );
+
+        // overwrite cname
+        $this->assertEquals(
+            'http://cdn.riaf.jp/test123/image/upload/test',
+            $this->cloudinary->getUrl('test', array(
+                'cname' => 'cdn.riaf.jp',
+            ))
+        );
+
+        $cname = $this->cloudinary->getCname();
+        $this->cloudinary->setCname('cdn2.riaf.jp');
+
+        $this->assertEquals(
+            'https://cdn2.riaf.jp/test123/image/upload/test',
+            $this->cloudinary->getUrl('test', array(
+                'secure' => true,
+            ))
+        );
+
+        $this->cloudinary->setCname($cname);
 
         // format
         $this->assertEquals(

@@ -1,0 +1,21 @@
+{
+  "name": "crocos/cloudinary",
+  "description": "cloudinary api",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Keisuke SATO",
+      "email": "sato@crocos.co.jp",
+      "homepage": "http://riaf.jp",
+      "role": "Developer"
+    }
+  ],
+  "version": "1.0.0",
+  "autoload": {
+    "psr-0": {"Cloudinary": "lib/"}
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*",
+    "satooshi/php-coveralls": "dev-master"
+  }
+}
